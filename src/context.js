@@ -37,14 +37,20 @@ export default class RoomProvider extends Component {
 
     getRoom = (slug) => {
         let tempRooms = [...this.state.rooms];
-        const room = tempRooms.find((room) => room.slug === slug);
+        const room = tempRooms.find(room => room.slug === slug);
         return room;
-    }
+    };
 
     render() {
-        return <RoomContext.Provider value={{...this.state}}>
+        return (
+        <RoomContext.Provider 
+            value={{
+                ...this.state,
+                getRoom: this.getRoom
+            }}>
             {this.props.children}
-        </RoomContext.Provider>;
+        </RoomContext.Provider>
+        );
     }
 }
 

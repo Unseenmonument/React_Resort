@@ -11,15 +11,16 @@ export default class FeaturedRooms extends Component {
         console.log(rooms);
 
         rooms = rooms.map(room => {
-            return <Room key={room.id} room={room} />
+            return <Room key={room.id} room={room} />;
         })
         
-        return <section className="featured-rooms">
+        return (
+            <section className="featured-rooms">
                 <Title title="featured rooms" />
                 <div className="featured-rooms-center">
                     {loading ? <Loading /> : rooms}
-                </div>
-               
-            </section>;
+                </div>      
+            </section>
+        );
     }
 }
