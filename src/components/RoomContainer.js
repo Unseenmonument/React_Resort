@@ -4,19 +4,17 @@ import RoomList from './RoomList';
 import { withRoomConsumer } from '../context';
 import Loading from './Loading';
 
-function RoomContainer({context}) {
+function RoomContainer({ context }) {
     const { loading, sortedRooms, rooms } = context;
     if(loading){
         return <Loading />
     }
     return (
-        <div>
-            hello from rooms container
+        <React.Fragment>
             <RoomFilter rooms={rooms} />
             <RoomList rooms={sortedRooms} />
-        </div>
+        </React.Fragment>
     );
-
 }
 
 export default withRoomConsumer(RoomContainer);
