@@ -10,10 +10,6 @@ import {Route, Switch} from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 require('dotenv').config();
-//require('dotenv').load();
-
-console.log(process.env.REACT_APP_API_SPACE);
-console.log("hi");
 
 function App() {
     return (
